@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="../halfmoon/halfmoon-variables.min.css" rel="stylesheet" />
+    <script src="../halfmoon/halfmoon.min.js"></script>
+    <link rel="stylesheet" href="css/generator.css">
+    <link rel="stylesheet" href="css/generator-dark.css">
+    <link rel="stylesheet" href="css/generator-light.css">
+    <script src="js/generator.js"></script>
+    <style>
+        #guess
+        {
+            position: relative;
+        }
+
+        #guess
+        {
+            display: inline-block;
+        }
+
+        #guess
+        {
+            border: 5px solid #777;
+            border-radius: 5px;
+            background: #777;
+        }
+
+        #guess.correct
+        {
+            border-color: hsl(125deg 100% 20%);
+            background-color: hsl(125deg 100% 20%);
+        }
+
+        #guess.incorrect
+        {
+            border-color: hsl(0, 100%, 20%);
+            background-color: hsl(0, 100%, 20%);
+        }
+
+        #before
+        {
+            position: absolute;
+        }
+
+        #after
+        {
+            position: relative;
+        }
+
+        #before, #after
+        {
+            top: 0px;
+            left: 0px;
+        }
+
+        .guessing #after
+        {
+            opacity: 0;
+        }
+    </style>
+
+</style>
+</head>
+
+<body class="dark-mode">
+    <p>FFXIV-2D</p>
+    <select id="stageSelect"></select>
+
+    <section id="guess" class="guessing">
+        <div id="before">
+        </div>
+        <div id="after">
+        </div>
+    </section>
+    <script>
+        let loadGuess = async (stageName) => {
+            const hitThisAOE = (element) => {
+                if (element.dataset && element.dataset["ignoreclick"])
+                {
+                    return false;
+                }
+
+                if (element.classList && element.classList.contains("field"))
+                {
+                    return true;
+                }
+
+                return false;
+            };
+            document.getElementById("guess").classList.remove("correct");
+            document.getElementById("guess").classList.remove("incorrect");
+            document.getElementById("guess").classList.add("guessing");
+
+            const stage = await (await fetch(`baked/stages/${stageName}.json`)).json();
+            const beforeStage = Object.entries(stage.stages)[0][1].variants[0].before;
+            const afterStage  = Object.entries(stage.stages)[0][1].variants[0].after;
+            
+            generateField(document.getElementById("before"), beforeStage);
+            generateField(document.getElementById("after"), afterStage);
+
+            const afterElement = document.getElementById("after");
+            afterElement.addEventListener("click", (a, b, c) => {
+                const correctGuess = !a.path.some(hitThisAOE);
+                document.getElementById("guess").classList.remove("guessing");
+                if (correctGuess)
+                {
+                    document.getElementById("guess").classList.add("correct");
+                    return;
+                }
+
+                if (!correctGuess)
+                {
+                    document.getElementById("guess").classList.add("incorrect");
+
+                    const firstRegularElement = a.path.findIndex(e => e.classList.contains("playable-area"));
+                    a.path.slice(0, firstRegularElement).forEach(e => e.classList.add("highlight"));
+                    return;
+                }
+            })
+        };
+
+        let fillSelect = async () => {
+            const stageSelect = document.getElementById("stageSelect");
+            const stages = await fetch("baked/stages.json").then(r => r.json());
+            
+            const option = document.createElement("option");
+            option.value = '';
+            option.innerText = "--- SELECT A STAGE ---";
+            stageSelect.appendChild(option);
+
+            stages.forEach(stage => {
+                const option = document.createElement("option");
+                option.value = stage;
+                option.innerText = stage;
+                stageSelect.appendChild(option);
+            });
+
+            stageSelect.addEventListener("change", () => {
+                if (!stageSelect.value)
+                {
+                    return;
+                }
+
+                loadGuess(stageSelect.value);
+            });
+        };
+
+        fillSelect();
+
+        </script>
+</body>
+
+</html>

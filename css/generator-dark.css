@@ -1,0 +1,142 @@
+body.dark-mode .gamefield .field.color-purple
+{
+    border-color: hsl(255deg 100% 65%);
+    background-color: hsla(255deg 25% 65% / 100%);
+
+    stroke: hsl(255deg 100% 65%);
+    fill: hsla(255deg 25% 65% / 100%);
+}
+body.dark-mode .gamefield .field.color-yellow
+{
+    border-color: hsl(50deg 100% 65%);
+    background-color: hsla(50deg 25% 65% / 100%);
+
+    stroke: hsl(50deg 100% 65%);
+    fill: hsla(50deg 25% 65% / 100%);
+}
+body.dark-mode .gamefield .field.color-green
+{
+    border-color: hsl(125deg 100% 65%);
+    background-color: hsla(125deg 25% 65% / 100%);
+
+    stroke: hsl(125deg 100% 65%);
+    fill: hsla(125deg 25% 65% / 100%);
+}
+body.dark-mode .gamefield .field.color-blue
+{
+    border-color: hsl(180deg 100% 65%);
+    background-color: hsla(180deg 25% 65% / 100%);
+
+    stroke: hsl(180deg 100% 65%);
+    fill: hsla(180deg 25% 65% / 100%);
+}
+
+body.dark-mode .gamefield .field.color-purple-alpha
+{
+    border-color: hsl(255deg 100% 65% / 50%);
+    background-color: hsla(255deg 100% 65% / 25%);
+
+    stroke: hsl(255deg 100% 65% / 50%);
+    fill: hsla(255deg 100% 65% / 25%);
+}
+body.dark-mode .gamefield .field.color-yellow-alpha
+{
+    border-color: hsl(50deg 100% 65% / 50%);
+    background-color: hsla(50deg 100% 65% / 25%);
+
+    stroke: hsl(50deg 100% 65% / 50%);
+    fill: hsla(50deg 100% 65% / 25%);
+}
+body.dark-mode .gamefield .field.color-green-alpha
+{
+    border-color: hsl(125deg 100% 65%);
+    background-color: hsla(125deg 25% 65% / 100%);
+
+    stroke: hsl(125deg 100% 65% / 50%);
+    fill: hsla(125deg 100% 65% / 25%);
+}
+body.dark-mode .gamefield .field.color-blue-alpha
+{
+    border-color: hsl(180deg 100% 65% / 50%);
+    background-color: hsla(180deg 100% 65% / 25%);
+
+    stroke: hsl(180deg 100% 65% / 50%);
+    fill: hsla(180deg 100% 65% / 25%);
+}
+
+body.dark-mode .gamefield .field.border-color-purple
+{
+    background: transparent;
+    border-color:  hsl(255deg 100% 65%);
+
+    fill: transparent;
+    stroke:  hsl(255deg 100% 65%);
+}
+body.dark-mode .gamefield .field.border-color-yellow
+{
+    background: transparent;
+    border-color:  hsl(50deg 100% 65%);
+
+    fill: transparent;
+    stroke:  hsl(50deg 100% 65%);
+}
+body.dark-mode .gamefield .field.border-color-green
+{
+    background: transparent;
+    border-color:  hsl(125deg 100% 65%);
+
+    fill: transparent;
+    stroke:  hsl(125deg 100% 65%);
+}
+body.dark-mode .gamefield .field.border-color-blue
+{
+    background: transparent;
+    border-color:  hsl(180deg 100% 65%);
+
+    fill: transparent;
+    stroke:  hsl(180deg 100% 65%);
+}
+
+
+body.dark-mode .gamefield .field.fill-color-purple
+{
+    background: transparent;
+    border-color: hsla(255deg 25% 65% / 100%);
+
+    fill: transparent;
+    stroke: hsla(255deg 25% 65% / 100%);
+}
+body.dark-mode .gamefield .field.fill-color-yellow
+{
+    background: transparent;
+    border-color: hsla(50deg 1250% 65% / 100%);
+
+    fill: transparent;
+    stroke: hsla(50deg 1250% 65% / 100%);
+}
+body.dark-mode .gamefield .field.fill-color-green
+{
+    background: transparent;
+    border-color: hsla(125deg 25% 65% / 100%);
+
+    fill: transparent;
+    stroke: hsla(125deg 25% 65% / 100%);
+}
+body.dark-mode .gamefield .field.fill-color-blue
+{
+    background: transparent;
+    border-color: hsla(180deg 25% 65% / 100%);
+
+    fill: transparent;
+    stroke: hsla(180deg 25% 65% / 100%);
+}
+
+.gamefield .playable-area {
+    background-color: #333 !important;
+    fill: #333 !important;
+}
+
+.field.highlight {
+    background-color: #FFF !important;
+    fill: #FFF !important;
+}

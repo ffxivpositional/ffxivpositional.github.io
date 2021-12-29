@@ -1,0 +1,6 @@
+[
+    {"shape": "border", "color": "green",  "coverage": {"x": [0.00, 0.00], "y": [0.00, 1.00]}},
+    {"shape": "border", "color": "purple", "coverage": {"x": [0.00, 0.50], "y": [0.00, 0.00]}},
+    {"shape": "border", "icon": "yellow", "color": "yellow", "coverage": {"x": [1.00, 1.00], "y": [0.00, 0.50]}},
+    {"shape": "border", "icon": "blue",   "color": "blue",   "coverage": {"x": [0.00, 1.00], "y": [1.00, 1.00]}}
+]

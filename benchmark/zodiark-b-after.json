@@ -1,0 +1,5 @@
+[
+    {"shape": "triangle", "color": "purple", "start": [0.5, 0.00], "angle": 90, "rotation": 0, "size": [1.4, 1.4]},
+    {"shape": "square",   "color": "green",  "coverage": {"x": [0.0, 0.33333], "y": [0.00, 1.00]}},
+    {"shape": "square",   "color": "green",  "coverage": {"x": [0.66777, 1.00], "y": [0.00, 1.00]}}
+]

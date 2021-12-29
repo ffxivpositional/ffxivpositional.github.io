@@ -1,0 +1,5 @@
+[
+    {"shape": "square", "color": "yellow", "coverage": {"x": [0.00, 0.50], "y": [0.00, 1.00]}},
+    {"shape": "square", "color": "purple", "coverage": {"x": [0.50, 1.00], "y": [0.00, 1.00]}},
+    {"shape": "square", "color": "green",  "coverage": {"x": [0.00, 1.00], "y": [0.00, 0.50]}}
+]
